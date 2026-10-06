@@ -1,19 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:id="@+id/main" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="@string/app_name"
+                android:textSize="28sp" android:textStyle="bold" />
+            <!-- Mascota decorativa: el título ya comunica el nombre de la app. -->
+            <ImageView android:id="@+id/iv_tiendita" android:layout_width="88dp"
+                android:layout_height="88dp" android:layout_marginStart="8dp"
+                android:src="@drawable/tiendita_quieta" android:scaleType="fitCenter"
+                android:contentDescription="@null" android:importantForAccessibility="no" />
+        </LinearLayout>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/instrucciones_tienda" android:layout_marginBottom="16dp" />
+        <EditText android:id="@+id/et_nombre" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="48dp"
+            android:hint="@string/nombre_tienda" android:inputType="textCapWords" />
+        <EditText android:id="@+id/et_telefono" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="48dp"
+            android:hint="@string/telefono_tienda" android:inputType="phone" />
+        <EditText android:id="@+id/et_web" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="48dp"
+            android:hint="@string/web_tienda" android:inputType="textUri" />
+        <EditText android:id="@+id/et_instagram" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="48dp"
+            android:hint="@string/instagram_tienda" android:inputType="textUri" />
+        <Button android:id="@+id/btn_web" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/abrir_web" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_instagram" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/abrir_instagram"
+            app:icon="@drawable/ic_instagram" app:iconGravity="textStart"
+            app:iconSize="20dp" app:iconPadding="8dp"
+            app:iconTint="?attr/colorOnPrimary" />
+        <Button android:id="@+id/btn_llamar" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/abrir_telefono" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/titulo_foto" android:textStyle="bold"
+            android:textSize="20sp" android:layout_marginTop="24dp" />
+        <Button android:id="@+id/btn_tomar_foto" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/tomar_foto" />
+        <TextView android:id="@+id/tv_estado_foto" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/foto_sin_captura"
+            android:accessibilityLiveRegion="polite" />
+        <Button android:id="@+id/btn_ver_foto" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/ver_foto" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/titulo_ubicacion" android:textStyle="bold"
+            android:textSize="20sp" android:layout_marginTop="24dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ayuda_ubicacion" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText android:id="@+id/et_latitud" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="48dp"
+            android:hint="@string/latitud" android:inputType="numberDecimal|numberSigned" />
+        <EditText android:id="@+id/et_longitud" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="48dp"
+            android:hint="@string/longitud" android:inputType="numberDecimal|numberSigned" />
+        <Button android:id="@+id/btn_ubicacion_actual" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/obtener_ubicacion" />
+        <TextView android:id="@+id/tv_estado_ubicacion" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/ubicacion_sin_datos"
+            android:accessibilityLiveRegion="polite" />
+        <Button android:id="@+id/btn_mapa" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/abrir_mapa" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/titulo_compartir" android:textStyle="bold"
+            android:textSize="20sp" android:layout_marginTop="24dp" />
+        <EditText android:id="@+id/et_destinatario_sms" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="48dp"
+            android:hint="@string/destinatario_sms" android:inputType="phone" />
+        <Button android:id="@+id/btn_sms" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/compartir_sms" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/ayuda_sms" />
+        <Button android:id="@+id/btn_ajustes" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            android:text="@string/ajustes_calidad" />
+        <Button android:id="@+id/btn_resumen" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/ver_resumen" />
+    </LinearLayout>
+</ScrollView>
