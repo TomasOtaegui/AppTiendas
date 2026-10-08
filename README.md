@@ -4,7 +4,7 @@
 
 **Integrantes:**
 * Tomás Ignacio Otáegui Cerda
-* Jorge [Apellido de Jorge]
+* Jorge Barrientos.
 
 ---
 
